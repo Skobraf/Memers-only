@@ -1,0 +1,11 @@
+<%= link_to 'Login', login_path %>
+<% if logged_in? %>
+  <%= link_to 'Logout', logout_path, :method => :delete %>
+<% end %>
+<% @posts.each do |post| %>
+  <h1>Title: <%= post.title %></h1>
+  <h5>Description: <%= post.description %></h5>
+  <% if current_user %>
+    <p>Author: <%= post.user.username %></p>
+  <% end %>
+<% end %>
