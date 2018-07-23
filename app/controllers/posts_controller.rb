@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(whitelist_params)
+    @post = Post.new(post_params)
     @post.user_id = current_user.id
 
     if @post.save
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
 
   private
 
-  def whitelist_params
+  def post_params
     params.require(:post).permit(:title, :description)
   end
 end
