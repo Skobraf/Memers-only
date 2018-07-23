@@ -23,8 +23,4 @@ class SessionsController < ApplicationController
     redirect_to login_path
   end
 
-  private
-
-  def whitelist_params
-  end
 end
